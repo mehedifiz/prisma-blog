@@ -1,6 +1,7 @@
 import compression from "compression";
 import cors from "cors";
 import express from "express";
+import { userRouter } from "./nodules/user/user.routes";
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.use(
 app.get("/", (_req, res) => {
   res.send("API is running");
 });
+
+app.use("/api/user" , userRouter)
 
 
 // 404 Handler
